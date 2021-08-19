@@ -3,12 +3,12 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'stepshop/index.html')
 
 
 def contacts(reqest):
-    return render(reqest, 'contact.html')
+    return render(reqest, 'stepshop/contact.html')
 
 
 def about(reqest):
-    return render(reqest, 'about.html')
+    return render(reqest, 'stepshop/about.html')

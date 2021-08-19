@@ -3,6 +3,14 @@
 
 
 {% block content %}
+
+
+<div style="color: red;">
+  {{request.resolver_match}}
+</div>
+
+
+
     <!-- Page Content -->
     <!-- Items Starts Here -->
     <div class="featured-page">
@@ -16,10 +24,9 @@
           </div>
           <div class="col-md-8 col-sm-12">
             <div id="filters" class="button-group">
-              <button class="btn btn-primary" data-filter="*">All Products</button>
-              <button class="btn btn-primary" data-filter=".new">Newest</button>
-              <button class="btn btn-primary" data-filter=".low">Low Price</button>
-              <button class="btn btn-primary" data-filter=".high">Hight Price</button>
+              {% for item in links_menu %}
+                <button class="btn btn-primary" data-filter="{{item.data_filter}}">{{item.name}}</button>
+              {% endfor %}
             </div>
           </div>
         </div>

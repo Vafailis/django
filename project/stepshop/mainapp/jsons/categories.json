@@ -1,0 +1,10 @@
+[
+    {
+        "model": "mainapp.productcategory",
+        "pk": 1,
+        "fields": {
+            "name": "wear",
+            "description": ""
+        }
+    }
+]

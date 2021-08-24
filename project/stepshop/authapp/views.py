@@ -1,15 +1,16 @@
-from django.shortcuts import render
 from django.contrib import auth
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .forms import ShopUserLoginForm, ShopUserRegisterForm
+from django.shortcuts import render
+from authapp.forms import ShopUserLoginForm, ShopUserRegisterForm
+
 
 def login(request):
     title = 'вход'
 
-    login_form= ShopUserLoginForm(data=request.POST)
+    login_form = ShopUserLoginForm(data=request.POST)
 
-    if(request.method == 'POST' and login_form.is_valid()):
+    if request.method == 'POST' and login_form.is_valid():
         username = request.POST['username']
         password = request.POST['password']
 
@@ -23,17 +24,18 @@ def login(request):
         'login_form': login_form
     }
 
-    return render(request=request, template_name='authapp/login.html', context=context)
+    return render(request, 'authapp/login.html', context=context)
 
 
-def logout(req):
-    auth.logout(req)
+def logout(request):
+    auth.logout(request)
     return HttpResponseRedirect(reverse('index'))
 
 
 def register(request):
-    title = 'Регистрация'
-
+    title = 'регистрация'
+    register_form = None
+    
     if request.method == 'POST':
         register_form = ShopUserRegisterForm(request.POST, request.FILES)
 
@@ -42,10 +44,10 @@ def register(request):
             return HttpResponseRedirect(reverse('auth:login'))
     else:
         register_form = ShopUserRegisterForm()
+
     context = {
-        'title':title,
-        'register_form':register_form
+        'title': title,
+        'register_form': register_form
     }
 
     return render(request, 'authapp/register.html', context)
-

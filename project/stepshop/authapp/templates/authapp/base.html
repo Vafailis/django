@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        {% block title %}
+            {{title|title}}
+        {% endblock %}
+    </title>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'stepshop/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'stepshop/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'stepshop/css/tooplate-main.css' %}">
+    <link rel="stylesheet" href="{% static 'stepshop/css/owl.css' %}">
+
+    
+    {% block css %}
+    {% endblock %}
+
+    {% block js %}
+    {% endblock %}
+</head>
+<body>
+    <div class="container">
+        <div class="login">
+            <div class="h2 text-center head">Вход в систему</div>
+
+            {% block content %}
+            {% endblock %}
+            
+        </div>
+    </div>
+</body>
+</html>

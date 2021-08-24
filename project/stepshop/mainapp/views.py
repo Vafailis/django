@@ -17,4 +17,4 @@ def products(req):
         'products': products_data
     }
 
-    return render(request=req,template_name='mainapp\products.html', context=context)
+    return render(request=req,template_name='mainapp/products.html', context=context)

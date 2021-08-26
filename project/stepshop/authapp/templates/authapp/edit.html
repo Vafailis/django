@@ -1,0 +1,18 @@
+{% extends  'authapp/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="mx-auto col-3">
+        <div class="row">
+            <div class="user-avatar">
+                <img src="stepshop/madia/{{ user.avatar }}" alt="{{ user.username }}" class="rounded-circle" >
+            </div>
+        </div>
+        <form class="form-horizontall" action="{% url 'auth:edit' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{edit_form.as_p}}
+            <input type="submit" class="bform-control" value="сохранитьь">
+        </form>
+        <a href="{% url 'index' %}" class="btn btn-round form-control last">На главную</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+    <!-- Navigation -->
+{% load static %}
+
+<div class="featured-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-12">
+        <div class="section-heading">
+          <div class="line-dec"></div>
+          <h1>Featured Items</h1>
+        </div>
+      </div>
+      <div class="col-md-8 col-sm-12">
+        <div id="filters" class="button-group">
+          {% for item in links_menu %}
+            <button class="btn btn-primary">
+              <a href="{#% url 'products:category' %#}">{{item.name}}</a>
+            </button>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      

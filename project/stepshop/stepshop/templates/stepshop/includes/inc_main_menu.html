@@ -32,7 +32,7 @@
 
               {% if user.is_authenticated %}
               <li class="nav-item">
-                <a class="nav-link" href="{#% url 'auth:edit' %#}">
+                <a class="nav-link" href="{% url 'auth:edit' %}">
                   {{ user.username }}
                 </a>
               </li>

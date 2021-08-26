@@ -5,36 +5,8 @@
 {% block content %}
 
 
-<!-- <div style="color: red;">
-  {{request.resolver_match}}
 
-  stepshop/media/product_images/50059_19633152-7566413-image-a-56_1570908569851.jpg
-  stepshop/media/product_images/50059_19633152-7566413-image-a-56_1570908569851.jpg
-</div> -->
-
-
-
-    <!-- Page Content -->
-    <!-- Items Starts Here -->
-    <div class="featured-page">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 col-sm-12">
-            <div class="section-heading">
-              <div class="line-dec"></div>
-              <h1>Featured Items</h1>
-            </div>
-          </div>
-          <div class="col-md-8 col-sm-12">
-            <div id="filters" class="button-group">
-              {% for item in links_menu %}
-                <button class="btn btn-primary" data-filter="{{item.data_filter}}">{{item.name}}</button>
-              {% endfor %}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    {% include  'mainapp/includes/inc_category_menu.html' %}
   
     <div class="featured container no-gutter">
 

@@ -12,9 +12,14 @@
       </div>
       <div class="col-md-8 col-sm-12">
         <div id="filters" class="button-group">
+
+          <button class="btn btn-primary">
+            <a href="{% url 'products:category' 0 %}">All</a>
+          </button>
+
           {% for item in links_menu %}
             <button class="btn btn-primary">
-              <a href="{#% url 'products:category' %#}">{{item.name}}</a>
+              <a href="{% url 'products:category' item.pk %}">{{item.name}}</a>
             </button>
           {% endfor %}
         </div>

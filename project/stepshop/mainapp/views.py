@@ -14,7 +14,7 @@ def products(req, pk=None):
     if pk is not None:
         if pk == 0:
             products_data = Product.objects.all().order_by('price')
-            category = {'name': 'all'}
+            category = {'name': 'all', 'pk': 0}
         else:
             category = get_object_or_404(ProductCategory, pk=pk)
             products_data = Product.objects.filter(category__pk=pk).order_by('price')

@@ -25,3 +25,12 @@ def products(req, pk=None):
         }
 
     return render(request=req,template_name='mainapp/products.html', context=context)
+
+
+def product(request, pk):
+    context = {
+        'links_menu': ProductCategory.objects.all(),
+        'products': get_object_or_404(Product, pk=pk)
+    }
+
+    return render(request=request,template_name='mainapp/product.html', context=context)

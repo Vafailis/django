@@ -13,7 +13,7 @@
         <div class="row posts">
           {% for item in products %}
             <div id="{{item.pk}}" class="item new col-md-4">
-              <a href="single-product.html">
+              <a href="{% url 'products:product' item.pk %}">
                 <div class="featured-item">
                   <img src="/media/{{item.image}}" alt="">
                   <h4>{{item.name}}</h4>

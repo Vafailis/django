@@ -35,12 +35,12 @@
           </div>
           <div class="col-md-12">
             <div class="owl-carousel owl-theme">
-              {% for product in products %}
-                <a href="single-product.html">
+              {% for item in products %}
+                <a href="{% url 'products:product' item.pk %}">
                   <div class="featured-item">
-                    <img src="/media/{{ product.image }}" alt="{{ product.short_desc }}">
-                    <h4>{{ product.name }}</h4>
-                    <h6>${{ product.price }}</h6>
+                    <img src="/media/{{ item.image }}" alt="{{ item.short_desc }}">
+                    <h4>{{ item.name }}</h4>
+                    <h6>${{ item.price }}</h6>
                   </div>
                 </a>
               {% endfor %}

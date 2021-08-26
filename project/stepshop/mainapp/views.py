@@ -3,26 +3,13 @@ from mainapp.models import Product, ProductCategory
 
 
 def products(req, pk=None):
-
-    links_menu = ProductCategory.objects.all()
-    products_data = Product.objects.all().order_by('price')
     context = {
-        'links_menu': links_menu,
-        'products': products_data
+        'links_menu': ProductCategory.objects.all(),
+        'products': Product.objects.all().order_by('price')
     }
 
     if pk is not None:
-        if pk == 0:
-            products_data = Product.objects.all().order_by('price')
-            category = {'name': 'all', 'pk': 0}
-        else:
-            category = get_object_or_404(ProductCategory, pk=pk)
-            products_data = Product.objects.filter(category__pk=pk).order_by('price')
-
-        context = {
-            'links_menu': links_menu,
-            'products': products_data
-        }
+        context['products'] = Product.objects.filter(category__pk=pk).order_by('price')
 
     return render(request=req,template_name='mainapp/products.html', context=context)
 
@@ -30,7 +17,8 @@ def products(req, pk=None):
 def product(request, pk):
     context = {
         'links_menu': ProductCategory.objects.all(),
-        'products': get_object_or_404(Product, pk=pk)
+        'all_products': Product.objects.filter(category__pk=ProductCategory.objects.get(name=Product.objects.get(pk=pk).category).pk).exclude(pk=pk),
+        'product': get_object_or_404(Product, pk=pk)
     }
 
     return render(request=request,template_name='mainapp/product.html', context=context)

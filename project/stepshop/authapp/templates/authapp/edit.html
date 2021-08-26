@@ -5,7 +5,7 @@
     <div class="mx-auto col-3">
         <div class="row">
             <div class="user-avatar">
-                <img src="/media/{{ user.avatar }}" alt="{{ user.username }}" class="rounded-circle" >
+                <img src="/media/{{ user.avatar }}" alt="{{ user.username }}" class="rounded-circle" style="width: 15rem;">
             </div>
         </div>
         <form class="form-horizontall" action="{% url 'auth:edit' %}" method="post" enctype="multipart/form-data">

@@ -40,9 +40,20 @@
     <!-- Pre Header -->
     <div id="pre-header">
       <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <span>Suspendisse laoreet magna vel diam lobortis imperdiet</span>
+        <div class="row" style="height: 2.8rem;">
+          <div class="col-md-12" style="text-align: right;">
+            {% if user.is_authenticated %}
+                <a class="btn btn-light" style="margin-top: 0.2rem;" href="{% url 'auth:edit' %}">
+                  {{ user.username }}
+                </a>
+              {% endif %}
+
+              
+                {% if user.is_authenticated %}
+                  <a class="btn btn-danger" style="margin-top: 0.2rem;" href="{% url 'auth:logout' %}">Logout</a>
+                {% else %}
+                  <a class="btn btn-success" style="margin-top: 0.2rem;" href="{% url 'auth:login' %}">Login</a>
+                {% endif %}
           </div>
         </div>
       </div>

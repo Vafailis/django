@@ -28,6 +28,7 @@ def product(request, pk):
         'all_products': Product.objects.filter(category__pk=ProductCategory.objects.get(name=Product.objects.get(pk=pk).category).pk).exclude(pk=pk),
         'product': get_object_or_404(Product, pk=pk),
         'basket':get_basket_quentity(request),
+        'category_id': ProductCategory.objects.get(name=Product.objects.get(pk=pk).category).pk
     }
 
     return render(request=request,template_name='mainapp/product.html', context=context)

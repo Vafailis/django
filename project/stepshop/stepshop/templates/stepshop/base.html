@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="{% static 'stepshop/css/fontawesome.css' %}">
     <link rel="stylesheet" href="{% static 'stepshop/css/tooplate-main.css' %}">
     <link rel="stylesheet" href="{% static 'stepshop/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'stepshop/css/style.css' %}">
 
     {% block css %}
     {% endblock %}
@@ -48,11 +49,17 @@
                 </a>
               {% endif %}
 
+              {% if basket %}
+                <span>{{ basket|length }}</span>
+              {% endif %}
               
                 {% if user.is_authenticated %}
-                  <a class="btn btn-danger" style="margin-top: 0.2rem;" href="{% url 'auth:logout' %}">Logout</a>
+                  <a href="{% url 'basket:view' %}" class="btn btn-light" style="margin-top: 0.2rem;">
+                    <img src="/media/icons/basket.PNG" style="width: 1.7rem;" alt="">
+                  </a>
+                  <a class="btn btn-light" style="margin-top: 0.2rem;" href="{% url 'auth:logout' %}">Logout</a>
                 {% else %}
-                  <a class="btn btn-success" style="margin-top: 0.2rem;" href="{% url 'auth:login' %}">Login</a>
+                  <a class="btn btn-light" style="margin-top: 0.2rem;" href="{% url 'auth:login' %}">Login</a>
                 {% endif %}
           </div>
         </div>

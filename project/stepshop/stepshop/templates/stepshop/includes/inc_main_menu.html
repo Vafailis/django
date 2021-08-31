@@ -1,32 +1,20 @@
     <!-- Navigation -->
 {% load static %}
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-          <br><br><br>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item
-                          {% if request.resolver_match.route == '' %}active{% endif %}
-                        ">
+          <div class="navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav">
+              <li class="nav-item {% if request.resolver_match.route == '' %}active{% endif %}">
                 <a class="nav-link" href="{% url 'index' %}">Home</a>
               </li>
-              <li class="nav-item
-                          {% if request.resolver_match.route == 'products/' %}active{% endif %}
-                        ">
+              <li class="nav-item {% if request.resolver_match.route == 'products/' %}active{% endif %}">
                 <a class="nav-link" href="{% url 'products:index' %}">Products</a>
               </li>
-              <li class="nav-item
-                          {% if request.resolver_match.route == 'about/' %}active{% endif %}
-                        ">
+              <li class="nav-item {% if request.resolver_match.route == 'about/' %}active{% endif %}">
                 <a class="nav-link" href="{% url 'about' %}">About&nbsp;Us</a>
               </li>
-              <li class="nav-item
-                          {% if request.resolver_match.route == 'contacts/' %}active{% endif %}
-                        ">
+              <li class="nav-item {% if request.resolver_match.route == 'contacts/' %}active{% endif %}">
                 <a class="nav-link" href="{% url 'contacts' %}">Contact&nbsp;Us</a>
               </li>
 

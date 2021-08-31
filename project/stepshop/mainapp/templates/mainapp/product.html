@@ -4,6 +4,7 @@
 {% block content %}
     <!-- Page Content -->
     <!-- Single Starts Here -->
+    <br><br>
     <div class="single-product">
       <div class="container">
         <div class="row">
@@ -22,7 +23,12 @@
               <h6>${{product.price}}</h6>
               <p style="word-wrap: break-word;">{{product.description}}</p>
               <span>{{product.quantity}} left on stock</span><br>
-              <a href="{% url 'basket:add' product.pk %}" class="btn btn-primary">В корзину</a>
+              {% if user.is_authenticated %}
+              <a href="{% url 'basket:add' product.pk %}" class="btn btn-primary">Add to cart</a>
+              {% else %}
+              <a href="{% url 'basket:add' product.pk %}" style="pointer-events: none; cursor: default; background-color: #888;" class="btn btn-primary">Add to cart</a>
+              <br><small class="text-muted">In order to add a product to the cart, register or log in</small>
+              {% endif %}
               <div class="down-content">
                 <div class="categories">
                   <h6>Category: 

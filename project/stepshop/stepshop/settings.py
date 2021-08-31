@@ -87,7 +87,7 @@ DATABASES = {
         # 'NAME': BASE_DIR / 'db.sqlite3',
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'stepshop_db',
-        'USER': 'step_user',
+        'USER': 'admin',
         'PASSWORD': '123',
     }
 }

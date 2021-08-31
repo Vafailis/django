@@ -68,6 +68,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries': {
+                'pic_tags': 'mainapp.temlatetags.pic_tags',
+            }
         },
     },
 ]
@@ -80,8 +83,12 @@ WSGI_APPLICATION = 'stepshop.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'stepshop_db',
+        'USER': 'step_user',
+        'PASSWORD': '123',
     }
 }
 

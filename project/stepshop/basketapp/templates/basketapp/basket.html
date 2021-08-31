@@ -20,10 +20,18 @@
                         <th scope="row">{{forloop.counter}}</th>
                         <td>{{item.product}}</td>
                         <td>{{item.quantity}}</td>
+                        <td><button class="btn btn-round">
+                            <a href="{% url 'basket:remove' item.pk %}">удалить</a>
+                        </button></td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
+
+
+            
+
+
         </div>
     </div>
 

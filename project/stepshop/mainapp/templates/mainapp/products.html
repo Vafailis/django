@@ -1,5 +1,6 @@
 {% extends 'stepshop/base.html' %}
 {% load static %}
+{% load pic_tags %}
 
 
 {% block content %}
@@ -15,7 +16,7 @@
             <div id="{{item.pk}}" class="item new col-md-4">
               <a href="{% url 'products:product' item.pk %}">
                 <div class="featured-item">
-                  <img src="/media/{{item.image}}" alt="">
+                  <img src="{{ item.image|media_folder_products }}" alt="{{ item.short_desc }}">
                   <h4>{{item.name}}</h4>
                   <h6>${{item.price}}</h6>
                 </div>
@@ -39,6 +40,17 @@
         </div>
       </div>
     </div>
+
+        <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'stepshop/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'stepshop/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+
+    <!-- Additional Scripts -->
+    <script src="{% static 'stepshop/js/custom.js' %}"></script>
+    <script src="{% static 'stepshop/js/owl.js' %}"></script>
+    <script src="{% static 'stepshop/js/isotope.js' %}"></script>
+    <script src="{% static 'stepshop/js/flex-slider.js' %}"></script>
     <!-- Featred Page Ends Here -->
 {% endblock %}
 

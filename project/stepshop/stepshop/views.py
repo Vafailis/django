@@ -9,7 +9,7 @@ def get_basket_quentity(request):
 
 
 def index(request):
-    products = Product.objects.all()[:4]
+    products = Product.objects.all()
 
 
     context = {

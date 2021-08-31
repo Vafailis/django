@@ -50,7 +50,7 @@
               {% endif %}
 
               {% if basket %}
-                <span>{{ basket|length }}</span>
+                <span>{{ basket.0.total_quantity }}</span>
               {% endif %}
               
                 {% if user.is_authenticated %}
@@ -160,9 +160,6 @@
         </div>
       </div>
     </div>
-    <!-- Sub Footer Ends Here -->
-
-
     <!-- Bootstrap core JavaScript -->
     <script src="{% static 'stepshop/jquery/jquery.min.js' %}"></script>
     <script src="{% static 'stepshop/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
@@ -173,6 +170,9 @@
     <script src="{% static 'stepshop/js/owl.js' %}"></script>
     <script src="{% static 'stepshop/js/isotope.js' %}"></script>
     <script src="{% static 'stepshop/js/flex-slider.js' %}"></script>
+
+
+
 
     <script language = "text/Javascript"> 
       cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field

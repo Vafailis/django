@@ -131,10 +131,11 @@ a {
 /* Banner Style */
 .banner {
 	margin-top: 50px;
-	background-image: url(../images/banner-bg.jpg);
+	background-image: url(../images/БАННЕРРР.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	padding: 150px 0px;
+	height: 600px;
 	background-position: center center;
 }
 .banner .caption {

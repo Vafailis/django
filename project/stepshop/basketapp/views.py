@@ -29,4 +29,6 @@ def basket_add(request, pk):
 
 
 def basket_remove(request, pk):
-    return  render(request, 'basketapp/basket.html')
+    aaa = get_object_or_404(Basket, pk=pk)
+    aaa.delete()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

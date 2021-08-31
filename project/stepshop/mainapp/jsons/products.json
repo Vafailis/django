@@ -1,8 +1,8 @@
 [
     {
-        "category": "wear",
-        "name": "ghkjghk",
-        "image": "product_images/ZqXttKonPt-wBxw2lRDYFKQfW4AKmcqcJWwe05Sf4iA5azYFV7VPJvQwj2cPtljYUT1ufO6rX_BXqFce5.jpg",
+        "category": "Socks",
+        "name": "good socks",
+        "image": "product_images/socks4.jpg",
         "short_desc": "",
         "description": "",
         "price": "4.00",
@@ -11,9 +11,9 @@
         "updated_at": "2021-08-23T09:35:56.760"
     },
     {
-        "category": "wear",
-        "name": "asd",
-        "image": "product_images/images.png",
+        "category": "Socks",
+        "name": "very good socks",
+        "image": "product_images/socks5.jpg",
         "short_desc": "",
         "description": "",
         "price": "123.00",
@@ -22,9 +22,42 @@
         "updated_at": "2021-08-23T09:35:53.219"
     },
     {
-        "category": "Бобер",
-        "name": "qwerty",
-        "image": "product_images/155622081914053617.jpg",
+        "category": "Slippers",
+        "name": "good Slippers",
+        "image": "product_images/slippers1.jpg",
+        "short_desc": "",
+        "description": "",
+        "price": "9999.00",
+        "quantity": 100500,
+        "created_at": "2021-08-23T09:03:19.915",
+        "updated_at": "2021-08-23T09:35:48.850"   
+    },
+    {
+        "category": "Socks",
+        "name": "blue socks",
+        "image": "product_images/носки3.jpg",
+        "short_desc": "",
+        "description": "",
+        "price": "4.00",
+        "quantity": 4,
+        "created_at": "2021-08-23T08:50:59.282",
+        "updated_at": "2021-08-23T09:35:56.760"
+    },
+    {
+        "category": "Slippers",
+        "name": "very good socks",
+        "image": "product_images/slippers5.jpg",
+        "short_desc": "",
+        "description": "",
+        "price": "123.00",
+        "quantity": 434344334,
+        "created_at": "2021-08-23T08:51:17.234",
+        "updated_at": "2021-08-23T09:35:53.219"
+    },
+    {
+        "category": "Slippers",
+        "name": "good Slippers",
+        "image": "product_images/slippers6.jpg",
         "short_desc": "",
         "description": "",
         "price": "9999.00",

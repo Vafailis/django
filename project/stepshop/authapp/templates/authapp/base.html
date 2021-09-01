@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{% static 'stepshop/css/fontawesome.css' %}">
     <link rel="stylesheet" href="{% static 'stepshop/css/tooplate-main.css' %}">
     <link rel="stylesheet" href="{% static 'stepshop/css/owl.css' %}">
-
+    <link rel="stylesheet" href="{% static 'stepshop/css/style.css' %}">
     
     {% block css %}
     {% endblock %}
@@ -29,7 +29,8 @@
 <body>
     <div class="container">
         <div class="login">
-            <div class="h2 text-center head">Вход в систему</div>
+            {% block name %}
+            {% endblock %}
 
             {% block content %}
             {% endblock %}

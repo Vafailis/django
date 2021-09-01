@@ -4,37 +4,49 @@
 {% block content %}
 
 {% if user.is_authenticated %}
+    {% if basket %}
+    <br><br>
     <div class="container" style="margin-top: 130px;">
-        <div class="row">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Продукт</th>
-                        <th scope="col">Количество</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for item in basket %}
-                    <tr>
-                        <th scope="row">{{forloop.counter}}</th>
-                        <td>{{item.product}}</td>
-                        <td>{{item.quantity}}</td>
-                        <td><button class="btn btn-round">
-                            <a href="{% url 'basket:remove' item.pk %}">удалить</a>
-                        </button></td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+        <div style="font-size: 18px; text-align: center;"> 
 
-
+            There are <strong>{{ basket.0.total_quantity }}</strong> 
+            products in the cart with a total value of 
+            <strong>${{ basket.0.total_cost }}</strong>
             
-
-
+        </div>
+            
+        <br>
+        <div class="row">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Продукт</th>
+                            <th scope="col">Количество</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in basket %}
+                        <tr>
+                            <th scope="row">{{forloop.counter}}</th>
+                            <td>{{item.product}}</td>
+                            <td>{{item.quantity}}</td>
+                            <td><button class="btn btn-round">
+                                <a href="{% url 'basket:remove' item.pk %}">delete</a>
+                            </button></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    {% else %}
+    <div class="container" style="margin-top: 130px;">
+        <div class="row" style="height: 700px;">
+            <h6 style="margin: auto;">You have no items in your cart.</h6>
         </div>
     </div>
-
+    {% endif %}
 {% endif %}
 
 {% endblock %}

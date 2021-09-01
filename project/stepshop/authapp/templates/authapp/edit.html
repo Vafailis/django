@@ -1,6 +1,16 @@
 {% extends  'authapp/base.html' %}
 {% load static %}
 
+
+{% block title %}
+Edit profile
+{% endblock %}
+
+
+{% block name %}
+<div class="h2 text-center head">Edit profile</div>
+{% endblock %}
+
 {% block content %}
     <div class="mx-auto col-3">
         <div class="row">
@@ -11,8 +21,9 @@
         <form class="form-horizontall" action="{% url 'auth:edit' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{edit_form.as_p}}
-            <input type="submit" class="bform-control" value="сохранитьь">
+            <br>
+            <input type="submit" class="bform-control" value="Save">
         </form>
-        <a href="{% url 'index' %}" class="btn btn-round form-control last">На главную</a>
+        <a href="{% url 'index' %}" class="btn btn-round form-control last">Home</a>
     </div>
 {% endblock %}

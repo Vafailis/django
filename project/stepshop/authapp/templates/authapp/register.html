@@ -1,12 +1,21 @@
 {% extends  'authapp/base.html' %}
 {% load static %}
 
+{% block title %}
+Sign up
+{% endblock %}
+
+{% block name %}
+<div class="h2 text-center head">Sign up</div>
+{% endblock %}
+
 {% block content %}
     <div class="mx-auto col-3">
         <form class="form-horizontall" action="{% url 'auth:register' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{register_form.as_p}}
-            <input type="submit" class="bform-control" value="зарЕгаться">
+            <br>
+            <input type="submit" class="btn btn-round form-control last" value="Sing up">
         </form>
     </div>
 {% endblock %}

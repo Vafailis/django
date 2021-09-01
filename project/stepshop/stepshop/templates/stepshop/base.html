@@ -15,7 +15,7 @@
       {% if title %}
         {{ title }} 
       {%else%}
-        PIXIE
+        HACK Shop
       {%endif%}
 
 
@@ -45,21 +45,16 @@
           <div class="col-md-12" style="text-align: right;">
             {% if user.is_authenticated %}
                 <a class="btn btn-light" style="margin-top: 0.2rem;" href="{% url 'auth:edit' %}">
-                  {{ user.username }}
+                  Profile
                 </a>
-              {% endif %}
-
-              {% if basket %}
-                <span>{{ basket.0.total_quantity }}</span>
               {% endif %}
               
                 {% if user.is_authenticated %}
-                  <a href="{% url 'basket:view' %}" class="btn btn-light" style="margin-top: 0.2rem;">
-                    <img src="{% static 'stepshop/images/cart.svg' %}" style="width: 1.45rem;" alt="">
-                  </a>
+                  <a href="{% url 'basket:view' %}" class="btn btn-light" style="margin-top: 0.2rem;">Cart - {{ basket.0.total_quantity }}</a>
                   <a class="btn btn-light" style="margin-top: 0.2rem;" href="{% url 'auth:logout' %}">Logout</a>
                 {% else %}
                   <a class="btn btn-light" style="margin-top: 0.2rem;" href="{% url 'auth:login' %}">Login</a>
+                  <a class="btn btn-light" style="margin-top: 0.2rem;" href="{% url 'auth:register' %}" class="">Sing up</a>
                 {% endif %}
           </div>
         </div>
